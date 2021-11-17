@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../externos/files'); %>
+        <title>Moovick | Biblioteca
+        </title>
+</head>
+
+<body>
+    <%- include('../menus/bar', {active: "biblio"}); %>
+        <!----------------------------------Inicial----------------------------------->
+        <section style="height: 100%;">
+            <div class="container-fluid bg-transparent" style="height: 100%;">
+                <div class="row" style="height: 30%;">
+                    <div class="col-md-12 animated animate__fadeInLeft logo-animado" style="padding-top: 2em; ">
+
+                        <center>
+                            <h1 class="card-text text-white" style="width: 50%; padding-top: 6%; font-weight: lighter;">
+                                Atualizar Livro
+
+                            </h1>
+                            <br/>
+                            <br/>
+
+
+                        </center>
+                    </div>
+
+                </div>
+                <div class="row" style="height: 100%; padding-top: 5rem;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 bg-white animated animate__slideInUp fast" style="height: 100%; padding-bottom: 2rem; border-radius: 10px; margin: 1rem; margin-bottom: 0;">
+                        <form action="salvarLivros" method="post" style="padding: 3rem;padding-bottom: 1rem; padding-top: 3rem;">
+
+                            <input type="hidden" name="id" id="id" value="<%= (livros.length > 0 ? livros[0].id: '') %>">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Título</span>
+                                </div>
+                                <input type="text" class="form-control" name="titulo" id="titulo" value="<%= (livros.length > 0 ? livros[0].titulo:'') %>" size="15"><br>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Autor</span>
+                                </div>
+                                <input class="input form-control" type="text" name="autor" id="autor" value="<%= (livros.length > 0 ? livros[0].autor:'') %>" size="15"><br>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Ano</span>
+                                </div>
+                                <input class="input form-control" type="text" name="ano" id="ano" value="<%= (livros.length > 0 ? livros[0].ano:'') %>" size="15"><br>
+                            </div>
+                            <input class="submit btn btn-secondary" type="submit" name="acao" value="Atualizar">
+
+                        </form>
+                    </div>
+                    <div class="col md-3"></div>
+                </div>
+            </div>
+        </section>
+
+</body>
+
+</html>
